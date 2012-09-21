@@ -1,9 +1,9 @@
 parameters:
-    sf2gen.console.class: Sf2gen\Bundle\ConsoleBundle\Sf2genConsoleListener
+    sf2gen.console.profiler_entry.class: Sf2gen\Bundle\ConsoleBundle\DataCollector\ConsoleDataCollector
 
 services:
-    sf2gen.toolbar:
-        class: %sf2gen.console.class%
-        arguments: [@kernel, @templating.engine.twig]
+    sf2gen.profiler_entry:
+        class: %sf2gen.console.profiler_entry.class%
+        arguments: [@kernel]
         tags:
-            - { name: kernel.event_listener, event: kernel.response, method: onKernelResponse, priority: -128 }
+            - { name: data_collector, template: "Sf2genConsoleBundle:Console:profile.html.twig", id: "console"}

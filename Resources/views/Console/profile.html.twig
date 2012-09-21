@@ -1,0 +1,16 @@
+{% extends 'WebProfilerBundle:Profiler:layout.html.twig' %}
+
+{% block menu %}
+<span class="label">
+    <span class="icon">{% spaceless %}
+        <img width=32 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAAlFJREFUeJylk7FrFFEQxn/z3tu9Z3bvchBIQBEsrCSEdEKMhWWE2EUrq5AyBP8IJUUCIvgX2NkIqWw02AkWkaRILV5ySXMJCefe7tv3noXcYkhh4cDHwMwwMx/zDfynycLCwpPt7e0309PTXe99k4gxAtBut6/EYoxorTk8PDxfXV19rjc3N98tLS3dGw6HNs9zm2WZnZiYaKCUslrrBiJiRcTOzs52T05OctPtdpN+v8/LV6+Yn5/nbDCg1WqhlLq+rghFUXB6esrW1hbWWmtijEGA2bk5Hj56xPe9Pfb39vg1HF5rEmMkhMDU1BTOOeq6DkYpRZqm7H76xM3bt3n29Cm9Xo+D/X2stde28N4jIlxeXuK9x2itKYqCW3fuEGNkfX2db1+/MhwOUSLYGzdQShFjbCiUZYn3Hq01RilFu9Phw/v3vH39Gpum3H/wgMfLy1Qh8PnjR456PQDqumYwGJBlWUPJACilcFUFMZKkKUc/f/Jld5cInJ2dEULAOUdRFDjnEBHqukZE/lAQEfI8xzlHp9MhhsBJv48SIU0SJicnKcsSYwxVVaG1ZqwZIyKICFmW4Zyj3W5jrSVJEkSEGCPOOUajEcYYRqMRrVbraoMQAnVdE0JAKYUxhiRJrkxyzgEQQmjqAYzW2qRpytraGlVVNdPH1EIIVFVFWZaUZcnFxQUzMzPjc2pzcHDwY3FxcW5jY+OKYOq6buC9b7z3nqqqcM5xfHw8kE6nc3dlZeVFnudd730cq+1v5Y0faxwXETk/P7/Y2dl5849n/bf9Bv1DPYZYR4JBAAAAAElFTkSuQmCC"/>
+    {% endspaceless %}</span>
+    <strong>Console</strong>
+</span>
+{% endblock %}
+
+{% block panel %}
+    <h2>Console</h2>
+    {% set commands =  collector.commands %}
+    {% include 'Sf2genConsoleBundle:Console:toolbar_js.html.twig' %}
+{% endblock %}
