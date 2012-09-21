@@ -144,10 +144,8 @@ class ConsoleController extends Controller
             $session->setFlashes($session->getFlashes());
         }
 
-        $position = false === strpos($request->headers->get('user-agent'), 'Mobile') ? 'fixed' : 'absolute';
-
         return $this->container->get('templating')->renderResponse('Sf2genConsoleBundle:Console:toolbar.html.twig', array(
-            'position'     => $position,
+            'position'     => 'normal',
             'apps'         => $this->container->getParameter('sf2gen_console.apps'),
         ));
     }

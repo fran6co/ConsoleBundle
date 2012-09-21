@@ -3,19 +3,8 @@
     <div style="clear: both; height: 40px;"></div>
 {% endif %}
 
-<div
-    style="position: {{ position }};
-        background-color: #f7f7f7;
-            top: 0;
-            right:0;
-            margin:0;
-            padding: 0;
-            z-index: 6000000;
-            width: 16px;
-            height: 16px;
-            text-align: left;"
->
-    <span style="display:block; position:absolute; text-align:right; top:2px; right:2px; width:auto; height:20px;">
+<div>
+    <span style="display:block;">
         <img 
             alt="Show console" 
             style="cursor: pointer;"
@@ -24,8 +13,7 @@
         />
         <div
             id="sf2gencdt-console"
-            style="display:none;
-            position:relative;width:100%;"
+            style="position:relative;width:100%;"
         >
             <div 
             id="sf2gencdt-console-output"
@@ -65,7 +53,7 @@
             <input
                 id="sf2gencdt-console-input" 
                 type="text" 
-                style="width:98%;background-color:#000;color:#fff;padding:2px;"
+                style="background-color:#000;color:#fff;padding:2px;"
                 onkeydown="return sf2gen.console(event);"
             />
 {% endif %}
